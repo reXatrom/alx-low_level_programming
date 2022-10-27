@@ -3,23 +3,23 @@
 
 /**
  * print_number - a function that prints an integer.
- * @num: integer to be printed
+ * @n: integer to be printed
  *
  * Return: void
  */
 
-void print_number(int num)
+void print_number(int n)
 {
-	unsigned int number = num;
+	unsigned int num = n;
 
-	if (num < 0)
+	if (n < 0)
 	{
 		_putchar();
-		number = -number;
+		num = -num;
 	}
 
-	if ((number / 10) > 0)
-		print_number(number / 10);
+	if ((num / 10) > 0)
+		print_number(num / 10);
 
-	_putchar((number % 10) + '0');
+	_putchar((num % 10) + '0');
 }
