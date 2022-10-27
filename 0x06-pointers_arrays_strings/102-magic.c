@@ -2,7 +2,6 @@
 
 /**
  * main - magic
- *
  * Return: Always 0 (success)
  */
 
@@ -20,7 +19,6 @@ int main(void)
 /*
  * write your line of code...
  * Remember:
- * main - magic
  * - you are not allowed to use a
  *   - you are not allowed to modify p
  *   - only one statement
