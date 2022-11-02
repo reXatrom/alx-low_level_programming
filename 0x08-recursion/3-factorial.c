@@ -7,7 +7,7 @@
  * Return: num
  */
 
-nt factorial(int n)
+int factorial(int n)
 {
 	int num;
 
