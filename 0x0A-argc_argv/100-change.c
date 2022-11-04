@@ -14,13 +14,11 @@
 
 int main(int argc, char *argv[])
 {
-	int total, count;
-
-	unsigned int m;
-
-	char *p;
+	int total, count, change, aux;
 
 	int cents[] = {25, 10, 5, 2, 1};
+
+	count = total = change = aux = 0;
 
 	if (argc != 2)
 	{
@@ -28,31 +26,25 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	total = strtol(argv[1], &p, 10);
-	count = 0;
+	total = atoi(argv[1]);
 
-	if (!*p)
+	if (total <= 0)
 	{
-		while (total > 1)
+		printf("0\n");
+		return (0);
+	}
+
+	while (cents[count] != '\0')
+	{
+		if (total >= cents[count])
 		{
-			for (m = 0; m < sizeof(cents[m]); m++)
-			{
-				if (total >= cents[m])
-				{
-					count += total / cents[m];
-					total = total % cents[m];
-				}
-			}
-		}
-		if (total == 1)
-			count++;
-	}
-	else
-	{
-		printf("Error\n");
-		return (1);
-	}
+			aux = (total / cents[count]);
 
-	printf("%d\n", count);
+			change += aux;
+			total -= cents[count] * aux;
+		}
+		count++;
+	}
+	printf("%d\n", change);
 	return (0);
 }
